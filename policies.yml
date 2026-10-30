@@ -1,0 +1,26 @@
+# What each role may see, per classification. Columns are classified automatically by governance/classify.py.
+# Actions: clear (raw value), mask (partial), hash (stable pseudonym, joinable), redact (PII removed from text),
+#          generalise (e.g. date of birth -> year), deny (column removed).
+roles:
+  analyst:
+    pii_direct: hash
+    pii_quasi: generalise
+    financial: deny
+    pii_free_text: redact
+    identifier: clear
+  marketing:
+    pii_direct: mask
+    pii_quasi: generalise
+    financial: deny
+    pii_free_text: deny
+    identifier: clear
+  support_agent:
+    pii_direct: clear
+    pii_quasi: clear
+    financial: mask
+    pii_free_text: clear
+    identifier: clear
+retention:
+  support.tickets: 365 days
+  marketing.events: 730 days
+  crm.customers: account lifetime + 6 years (financial records)
