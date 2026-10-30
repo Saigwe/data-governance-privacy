@@ -42,6 +42,10 @@ The tests check:
 - that pseudonymised keys still join
 - that erasure removes everything except legally retained, pseudonymised records
 
+## Walkthrough
+
+- [ ] 3-minute Loom walkthrough ([script ready](docs/walkthrough.md))
+
 ## Stack
 
 Python, DuckDB (secure views, regex redaction, md5 pseudonyms), YAML policy-as-code, pytest.
